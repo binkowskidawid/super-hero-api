@@ -84,7 +84,7 @@ npm run db:setup
 
 ```bash
 # Root directory
-npm run dev
+npm start
 ```
 
 Access:
@@ -151,8 +151,6 @@ npm test
 # Backend only
 npm run test:backend
 
-# Frontend only
-npm run test:frontend
 ```
 
 ## Future Improvements
