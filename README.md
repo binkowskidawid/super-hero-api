@@ -153,7 +153,39 @@ npm run test:backend
 
 ```
 
-## Future Improvements
+## Team Collaboration
+
+This project is structured as a monorepo to facilitate team collaboration. Here's how we can work together effectively:
+
+### Code Organization
+- Shared configuration and tooling
+- Clear module boundaries between frontend and backend
+- Consistent coding standards enforced by ESLint/Prettier
+
+### Development Workflow
+1. Create feature branches from `main`
+2. Write comprehensive PR descriptions
+3. Include tests for new features
+4. Request reviews from team members
+5. Address feedback promptly
+
+### Communication
+- Use inline documentation for complex logic
+- Keep the team updated on architectural decisions
+- Share knowledge through pair programming sessions
+- Regular code reviews to maintain quality
+- Open discussions about improvements
+
+### Expansion Ideas
+Together we could:
+- Add user authentication/roles
+- Implement real-time updates
+- Create team management features
+- Add superhero teams/groups
+- Develop API documentation
+- Set up monitoring/logging
+
+## If I had more time (Future Improvements)
 
 - OAuth2 authentication
 - Redis caching
