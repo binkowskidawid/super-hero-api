@@ -61,7 +61,7 @@ super-hero-api/
 1. Clone and install dependencies:
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/binkowskidawid/super-hero-api.git
 cd super-hero-api
 npm install
 ```
