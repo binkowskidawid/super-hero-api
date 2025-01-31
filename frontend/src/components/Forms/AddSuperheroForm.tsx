@@ -70,7 +70,7 @@ export function AddSuperheroForm() {
                     <Input {...field} placeholder="The Humble Helper" />
                   </FormControl>
                   <FormDescription>
-                    Choose a name that reflects your hero's humble nature.
+                    Choose a name that reflects your hero&apos;s humble nature.
                   </FormDescription>
                   <FormMessage />
                 </FormItem>
@@ -87,7 +87,7 @@ export function AddSuperheroForm() {
                     <Input {...field} placeholder="Making others feel valued and appreciated" />
                   </FormControl>
                   <FormDescription>
-                    Describe your hero's unique ability to help others.
+                    Describe your hero&apos;s unique ability to help others.
                   </FormDescription>
                   <FormMessage />
                 </FormItem>

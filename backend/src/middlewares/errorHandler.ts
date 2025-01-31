@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from 'express'
 import { z } from 'zod'
-import { logger } from '@/utils/logger'
+import { logger } from '../utils/logger'
 import { PrismaClientKnownRequestError } from '@prisma/client/runtime/library'
 
 /**

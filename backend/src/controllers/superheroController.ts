@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from 'express'
-import { SuperheroService } from '@/services/superheroService'
-import { SuperheroListResponse, SuperheroResponse } from '@/types/api'
-import { superheroSchema } from '@/validators/superheroSchema'
+import { SuperheroService } from '../services/superheroService'
+import { SuperheroListResponse, SuperheroResponse } from '../types/api'
+import { superheroSchema } from '../validators/superheroSchema'
 
 export class SuperheroController {
   /**

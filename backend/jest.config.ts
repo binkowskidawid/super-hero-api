@@ -1,13 +1,14 @@
-import type { Config } from '@jest/types'
-
-const config: Config.InitialOptions = {
+/** @type {import('jest').Config} */
+const config = {
   preset: 'ts-jest',
   testEnvironment: 'node',
   setupFiles: ['dotenv/config'],
-  roots: ['<rootDir>/tests', '<rootDir>/src'],
+  roots: ['<rootDir>/src', '<rootDir>/tests'],
   testMatch: [
     '**/tests/**/*.test.ts',
     '**/tests/**/*.spec.ts',
+    '**/src/**/*.test.ts',
+    '**/src/**/*.spec.ts',
   ],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
@@ -20,6 +21,12 @@ const config: Config.InitialOptions = {
     '/dist/',
   ],
   verbose: true,
+  moduleDirectories: ['node_modules', 'src'],
+  transform: {
+    '^.+\\.ts$': ['ts-jest', {
+      tsconfig: 'tsconfig.json',
+    }],
+  },
 }
 
 export default config

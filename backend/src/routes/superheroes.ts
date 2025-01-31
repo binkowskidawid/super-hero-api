@@ -1,8 +1,8 @@
 import { Router } from 'express'
-import { SuperheroController } from '@/controllers/superheroController'
-import { authenticateToken } from '@/middlewares/authMiddleware'
-import { validateRequest } from '@/middlewares/validateRequest'
-import { getSuperheroesQuerySchema, superheroIdSchema, superheroSchema } from '@/validators/superheroSchema'
+import { SuperheroController } from '../controllers/superheroController'
+import { authenticateToken } from '../middlewares/authMiddleware'
+import { validateRequest } from '../middlewares/validateRequest'
+import { getSuperheroesQuerySchema, superheroIdSchema, superheroSchema } from '../validators/superheroSchema'
 
 const superheroRouter = Router()
 

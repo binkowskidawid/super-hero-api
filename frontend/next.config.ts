@@ -3,6 +3,10 @@ import type { NextConfig } from 'next'
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   trailingSlash: true,
+  poweredByHeader: false,
+  compress: true,
+  generateEtags: true,
+  output: 'standalone',
   logging: {
     fetches: {
       fullUrl: true,

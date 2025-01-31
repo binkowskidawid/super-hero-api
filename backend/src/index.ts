@@ -3,10 +3,10 @@ import cors from 'cors'
 import helmet from 'helmet'
 import rateLimit from 'express-rate-limit'
 import { PrismaClient } from '@prisma/client'
-import { config } from '@/config/config'
-import { logger } from '@/utils/logger'
-import { superheroRouter } from '@/routes/superheroes'
-import { errorHandler } from '@/middlewares/errorHandler'
+import { config } from './config/config'
+import { logger } from './utils/logger'
+import { superheroRouter } from './routes/superheroes'
+import { errorHandler } from './middlewares/errorHandler'
 
 // Initialize Prisma client
 const prisma = new PrismaClient()

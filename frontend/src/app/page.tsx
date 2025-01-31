@@ -51,6 +51,8 @@ export default async function Home() {
           <AlertTitle>Error</AlertTitle>
           <AlertDescription>
             Failed to load superheroes. Please try again later.
+            {' '}
+            {error instanceof Error && <p>{error.message}</p>}
           </AlertDescription>
         </Alert>
       </div>

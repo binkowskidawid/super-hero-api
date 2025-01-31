@@ -1,5 +1,5 @@
 import { Prisma, PrismaClient } from '@prisma/client'
-import { APIError } from '@/middlewares/errorHandler'
+import { APIError } from '../middlewares/errorHandler'
 
 const prisma = new PrismaClient()
 

@@ -1,93 +1,168 @@
 # 🦸 Humble Superhero API 🦸‍♀️
 
-A full-stack application that celebrates the humble superheroes among us. This project includes both a backend API and a
-frontend interface for managing our everyday superheroes.
+A full-stack application celebrating everyday heroes, built with Next.js 15, React 19, Express, TypeScript, and Prisma.
+
+## Features
+
+- REST API with Express, TypeScript, and Prisma
+- Next.js frontend with TailwindCSS and Shadcn/ui
+- Real-time superhero management
+- Secure API with authentication and rate limiting
+- SQLite database with Prisma ORM
+- Docker support for easy deployment
+- Comprehensive test coverage
+
+## Tech Stack
+
+### Backend
+
+- Node.js + Express
+- TypeScript
+- Prisma ORM
+- SQLite
+- Jest for testing
+- Zod for validation
+
+### Frontend
+
+- Next.js 15
+- React 19
+- TailwindCSS
+- Shadcn/ui
+- React Hook Form
 
 ## Project Structure
 
 ```
 super-hero-api/
-├── backend/         # Node.js + Express + TypeScript API
-├── frontend/        # React + TypeScript frontend
-├── .gitignore      # Git ignore rules
-├── package.json    # Root package.json for monorepo management
-└── README.md       # This file
+├── backend/              # Express API with TypeScript
+│   ├── src/              # Source code
+│   ├── prisma/           # Database schema and migrations
+│   └── tests/            # API tests
+└── frontend/             # Next.js application
+    ├── src/
+    │   ├── app/          # Next.js app directory
+    │   ├── components/   # React components
+    │   └── lib/          # Shared utilities
+    └── public/           # Static assets
+
 ```
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js (v18 or higher)
-- npm (v8 or higher)
+- Node.js >=18
+- npm >=8
 - Git
 
 ### Installation
 
-1. Clone the repository:
-   ```bash
-   git clone <your-repo-url>
-   cd super-hero-api
-   ```
+1. Clone and install dependencies:
 
-2. Install dependencies for both projects:
-   ```bash
-   npm run install:all
-   ```
+```bash
+git clone <repository-url>
+cd super-hero-api
+npm install
+```
 
-3. Set up the database:
-   ```bash
-   cd backend
-   npm run db:setup
-   ```
-   This will:
-    - Create a new SQLite database
-    - Run all migrations
-    - Seed the database with sample superhero data
+2. Configure environment:
 
-   Note: The database will be automatically created with sample data when you first run the setup command. You don't
-   need to do any additional configuration!
+```bash
+cp backend/.env.example backend/.env
+cp frontend/.env.example frontend/.env
+```
 
-3. Start both frontend and backend in development mode:
-   ```bash
-   npm start
-   ```
+3. Setup database:
 
-### Development
+```bash
+cd backend
+npm run db:setup
+```
 
-- Frontend development server: `npm run start:frontend`
-- Backend development server: `npm run start:backend`
-- Run all tests: `npm test`
-- Build both projects: `npm run build`
+4. Start development servers:
 
-## Team Collaboration
+```bash
+# Root directory
+npm run dev
+```
 
-This project is structured as a monorepo to facilitate:
+Access:
 
-- Shared configuration and tooling
-- Easy dependency management
-- Consistent development experience
-- Simplified deployment process
+- Frontend: http://localhost:3000
+- API: http://localhost:3001
 
-When collaborating:
+### Docker Deployment
 
-1. Create feature branches from `main`
-2. Follow the conventional commits specification
-3. Submit PRs with comprehensive descriptions
-4. Ensure tests pass before merging
+Run with Docker Compose:
 
-## If I Had More Time
+```bash
+docker-compose up -d
+```
 
-Future improvements could include:
+## API Endpoints
 
-- Implement WebSocket for real-time updates
-- Add authentication system
-- Create a CI/CD pipeline
-- Add end-to-end testing
-- Implement caching strategy
-- Add documentation with Swagger/OpenAPI
-- Create Docker setup for easy deployment
+### POST /api/v1/superheroes
 
-## License
+Add a new superhero
 
-ISC
+```json
+{
+  "name": "The Silent Helper",
+  "superpower": "Making others feel valued",
+  "humilityScore": 9
+}
+```
+
+### GET /api/v1/superheroes
+
+Fetch superheroes sorted by humility score
+
+```json
+[
+  {
+    "id": 1,
+    "name": "The Silent Helper",
+    "superpower": "Making others feel valued",
+    "humilityScore": 9,
+    "createdAt": "2024-01-31T12:00:00.000Z"
+  }
+]
+```
+
+## Security Features
+
+- Environment variable validation (dotenv-safe + Zod)
+- API key authentication
+- Request rate limiting
+- CORS protection
+- Input validation
+- Request size limiting
+- Secure HTTP headers (Helmet)
+
+## Testing
+
+Run tests:
+
+```bash
+# All tests
+npm test
+
+# Backend only
+npm run test:backend
+
+# Frontend only
+npm run test:frontend
+```
+
+## Future Improvements
+
+- OAuth2 authentication
+- Redis caching
+- CI/CD pipeline
+- E2E testing with Playwright
+- OpenAPI/Swagger documentation
+
+## Author
+
+[Dawid Bińkowski](https://github.com/dawidbinkowski)
