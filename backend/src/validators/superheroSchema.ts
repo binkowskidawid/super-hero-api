@@ -21,7 +21,7 @@ export const superheroSchema = z.object({
       required_error: 'Superpower description is required',
       invalid_type_error: 'Superpower description must be a string',
     })
-    .min(5, 'Superpower description must be at least 5 characters')
+    .min(2, 'Superpower description must be at least 2 characters')
     .max(200, 'Superpower description must not exceed 200 characters'),
   humilityScore: z
     .number({
