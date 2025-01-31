@@ -1,0 +1,23 @@
+// Define how Prisma will generate the client code
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Configure the database connection
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// Define our Superhero model
+model Superhero {
+  id            Int      @id @default(autoincrement())
+  name          String   @unique // Each superhero needs a unique name
+  superpower    String
+  humilityScore Int // Score from 1-10
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  // Add an index on humilityScore for faster sorting
+  @@index([humilityScore])
+}
